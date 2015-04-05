@@ -1,0 +1,86 @@
+[user]
+    name = restrry
+    email = restrry@gmail.com
+[core]
+    excludesfile = ~/.gitignore
+[color]
+    branch = auto
+    diff = auto
+    status = auto
+[color "branch"]
+    current = yellow reverse
+    local = yellow
+    remote = green
+[color "diff"]
+    meta = yellow bold
+    frag = magenta bold
+    old = red
+    new = cyan
+[color "status"]
+    added = yellow
+    changed = green
+    untracked = cyan
+[merge]
+    ff = no
+[diff]
+    noprefix = true
+[alias]
+    cp = cherry-pick
+    cl = clone
+    ci = commit
+    co = checkout
+    br = branch
+    dc = diff --cached
+    st = status -sb
+    unstage = reset HEAD --
+    last = log -1 HEAD
+    lg  = log --oneline --graph --decorate --all
+    lgg="log --pretty=oneline -n 20 --graph --abbrev-commit"
+    hi = log --oneline --graph --decorate --all --simplify-by-decoration
+
+    diff = diff --no-index
+
+    ac="!git add -A && git commit -av"
+    reb="!r() { rebase -i HEAD~$1; }; r"
+
+    pr = "!f() { git fetch -fu origin refs/pull/$1/head:pr/$1; } ; f"
+
+    # Find commits by source code
+    fc="!f() { log --pretty=format:'%C(yellow)%h  %Cblue%ad  %Creset%s%Cgreen  [%cn] %Cred%d' --decorate --date=short -S$1; }; f"
+    # Find commits by commit message
+    fm="!f() { log --pretty=format:'%C(yellow)%h  %Cblue%ad  %Creset%s%Cgreen  [%cn] %Cred%d' --decorate --date=short --grep=$1; }; f"
+
+
+[url "git@github.yandex-team.ru:lego/islands-components.git"]
+    insteadOf = "gcomp:"
+
+[url "git@github.yandex-team.ru:lego/islands-user.git"]
+    insteadOf = "guser:"
+
+[url "git@github.yandex-team.ru:lego/islands-page.git"]
+    insteadOf = "gpage:"
+
+[url "git@github.yandex-team.ru:lego/islands-icons.git"]
+    insteadOf = "gicon:"
+
+[url "git@github.yandex-team.ru:lego/islands-services.git"]
+    insteadOf = "gserv:"
+
+[url "git@github.yandex-team.ru:lego/islands-search.git"]
+    insteadOf = "gserc:"
+
+[url "git@github.yandex-team.ru:lego/islands-codestyle.git"]
+    insteadOf = "gcode:"
+
+[url "git@github.yandex-team.ru:lego/islands.git"]
+    insteadOf = "gisl:"
+
+[url "git@github.yandex-team.ru:lego/islands-romochka.git"]
+    insteadOf = "grom:"
+
+#[difftool "sourcetree"]
+#    cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+#    path =
+#[mergetool "sourcetree"]
+#    cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+#    trustExitCode = true

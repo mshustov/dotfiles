@@ -1,0 +1,82 @@
+#node
+npm-debug.log
+node_modules/
+bower_components/
+
+#IDE
+.idea/
+.iml
+*.sublime-project
+*.sublime-workspace
+
+# https://github.com/github/gitignore/blob/master/Global/OSX.gitignore
+.DS_Store
+
+# Thumbnails
+._*
+
+# Files that might appear on external disk
+.Spotlight-V100
+.Trashes
+
+# https://github.com/github/gitignore/blob/master/Global/SVN.gitignore
+.svn/
+
+# react cache
+.module-cache
+
+# https://github.com/github/gitignore/blob/master/Global/TextMate.gitignore
+*.tmproj
+*.tmproject
+tmtags
+
+# https://github.com/github/gitignore/blob/master/Global/Eclipse.gitignore
+*.pydevproject
+.project
+.metadata
+tmp/**
+tmp/**/*
+*.tmp
+*.bak
+*.swp
+*~.nib
+local.properties
+.classpath
+.loadpath
+
+# CDT-specific
+.cproject
+
+# https://github.com/github/gitignore/blob/master/Java.gitignore
+*.class
+
+# https://github.com/github/gitignore/blob/master/Maven.gitignore
+target/
+
+# https://github.com/github/gitignore/blob/master/Rails.gitignore
+*.rbc
+.rspec
+
+*.sassc
+.sass-cache
+
+# yandex
+/.bundle
+/vendor/bundle
+/log/*
+/tmp/*
+/public/system/*
+/coverage/
+/spec/tmp/*
+**.orig
+
+.enb/
+desktop.examples/
+touch-phone.examples/
+touch-pad.examples/
+tmpl-coverage/
+
+sgg.sh
+.yaspellerrc
+.yaspellerrc
+.yaspeller.dictionary.json

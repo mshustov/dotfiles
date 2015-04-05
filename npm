@@ -1,0 +1,11 @@
+#!/bin/bash
+
+sudo -v # ask for password only at the beginning
+
+npm install -g gh
+npm install -g gulp
+npm install -g n
+npm install -g node-inspector
+npm install -g svgo
+npm install -g webpack
+npm install -g weinre

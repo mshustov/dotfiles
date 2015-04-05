@@ -1,0 +1,5 @@
+ForwardAgent   yes
+
+Host pro
+    Hostname proverstka.ru
+    User restrry
