@@ -1,15 +1,59 @@
 {
-    "font_size": 12,
-    "indent_guide_options": [
+    "auto_complete_delay": 300,
+    "auto_complete_triggers":
+    [
+        {
+            "characters": ".",
+            "selector": "source.js"
+        }
+    ],
+    "binary_file_patterns":
+    [
+        "node_modules/",
+        "dist/",
+        "build/",
+        "release-notes.md"
+    ],
+    "bold_folder_labels": true,
+    "caret_style": "blink",
+    "color_scheme": "Packages/User/SublimeLinter/Oceanic Next (SL).tmTheme",
+    "create_window_at_startup": false,
+    "default_line_ending": "unix",
+    "draw_white_space": "all",
+    "ensure_newline_at_eof_on_save": true,
+    "folder_exclude_patterns":
+    [
+        ".svn",
+        ".git",
+        ".hg",
+        "CVS",
+        ".vscode"
+    ],
+    "font_size": 16,
+    "highlight_modified_tabs": true,
+    "ignored_packages":
+    [
+        "Gutter Color",
+        "JSCS-Formatter",
+        "SublimeLinter-jscs",
+        "Vintage"
+    ],
+    "indent_guide_options":
+    [
         "draw_normal",
         "draw_active"
     ],
+    "match_brackets_angle": true,
     "open_files_in_new_window": false,
-    "rulers": [120],
+    "rulers":
+    [
+        80
+    ],
+    "save_on_focus_lost": true,
     "scroll_past_end": true,
+    "shift_tab_unindent": true,
     "show_full_path": true,
     "tab_size": 4,
-    "translate_tabs_to_spaces": true,
-    "caret_style": "wide",
-    "color_scheme": "Packages/User/frontend-light/Grey.tmTheme"
+    "theme": "Fox.sublime-theme",
+    "translate_tabs_to_spaces": true
 }

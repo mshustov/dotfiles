@@ -1,0 +1,40 @@
+{
+    "bootstrapped": true,
+    "in_process_packages":
+    [
+    ],
+    "installed_packages":
+    [
+        "AutoFileName",
+        "Babel",
+        "Babel Snippets",
+        "Color Highlighter",
+        "ColorPicker",
+        "Dockerfile Syntax Highlighting",
+        "Elm Language Support",
+        "ES6-Toolkit",
+        "GitGutter",
+        "Gutter Color",
+        "Handlebars",
+        "JavaScript & NodeJS Snippets",
+        "JavaScriptNext - ES6 Syntax",
+        "JSCS-Formatter",
+        "JSHint Gutter",
+        "Oceanic Next Color Scheme",
+        "Open-Include",
+        "Origami",
+        "Package Control",
+        "Select Quoted",
+        "SideBarEnhancements",
+        "Status Bar File Size",
+        "Sublime Tutor",
+        "SublimeLinter",
+        "SublimeLinter-contrib-eslint",
+        "SublimeLinter-jscs",
+        "SublimeLinter-jshint",
+        "Syntax Highlighting for Sass",
+        "Theme - Fox",
+        "TypeScript",
+        "WakaTime"
+    ]
+}
