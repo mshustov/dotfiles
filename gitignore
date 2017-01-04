@@ -5,6 +5,7 @@ bower_components/
 
 #IDE
 .idea/
+.vscode/
 .iml
 *.sublime-project
 *.sublime-workspace
