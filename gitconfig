@@ -3,6 +3,7 @@
     email = restrry@gmail.com
 [core]
     excludesfile = ~/.gitignore
+    editor = code --wait
 [color]
     branch = auto
     diff = auto

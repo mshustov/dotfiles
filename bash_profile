@@ -6,8 +6,11 @@ export LSCOLORS=dxfxcxdxbxegedabagacdx
 export EDITOR="subl -w"
 
 export DEBFULLNAME="Mikhail Shustov"
-export DEBEMAIL="restrry@yandex-team.ru"
+export DEBEMAIL="restrry@gmail.com"
 alias dch='dch --distributor=debian'
+
+export WORKON_HOME=$HOME/.virtualenvs
+source /usr/local/bin/virtualenvwrapper.sh
 
 RED="\[\033[0;31m\]"
 YELLOW="\[\033[0;33m\]"
@@ -15,7 +18,9 @@ GREEN="\[\033[0;32m\]"
 GRAY="\[\e[0m\]"
 
 PS1="\$(date +%H:%M) $YELLOW\w$GREEN\$(parse_git_branch)$GRAY \$ "
-source ~/.git-completion.bash
+if [ -f $(brew --prefix)/etc/bash_completion ]; then
+  . $(brew --prefix)/etc/bash_completion
+fi
 
 # standard
 # PS1='\[\e[0;33m\]\w\[\e[0m\]\$ '
@@ -42,13 +47,12 @@ killall Finder'
 
 alias hub="git"
 
-alias sv="ssh veged.dev.yandex.ru"
 alias sr="ssh restrry@merzavcev.ru"
-alias st="ssh titan.serp.yandex.ru"
-alias sl="ssh lego-dev.dev.yandex-team.ru"
 
 alias sizeof="stat -s $1 | awk '{ print $8 }'"
 alias count="ls -f . | wc -l"
+alias gdiff="git diff --color | diff-so-fancy"
+alias localip="ifconfig | sed -En 's/127.0.0.1//;s/.*inet (addr:)?(([0-9]*\.){3}[0-9]*).*/\2/p'"
 
 
 function mkcd() {
@@ -96,6 +100,10 @@ function ems() {
 
 	#enb make sets $level.sets/$target/$target.examples/
 	enb make examples desktop.examples/$1/$2
+}
+
+function prlocal() {
+	git fetch origin pull/$1/head:$2
 }
 
 function git-copy-branch-name {
@@ -170,6 +178,15 @@ function grab {
  	git clone $rep $dir; cd $dir; npm i && npm run deps;
 }
 
+function docker-stop {
+	docker stop $(docker ps -a -q)
+}
+
+function docker-rm {
+	docker rm $(docker ps -a -q)
+}
+
+
 function cidate {
     # указанный или последний коммит
     STATE=$1 || HEAD;
@@ -191,3 +208,11 @@ complete -o default -F _tanker_completion tanker
 
 #. `brew --prefix`/Cellar/z/1.8/etc/profile.d/z.sh
 # ------------------------------------------------------------------------------
+
+# The next line updates PATH for the Google Cloud SDK.
+source '/Users/mikhailshustov/google-cloud-sdk/path.bash.inc'
+
+# The next line enables shell command completion for gcloud.
+source '/Users/mikhailshustov/google-cloud-sdk/completion.bash.inc'
+
+test -e "${HOME}/.iterm2_shell_integration.bash" && source "${HOME}/.iterm2_shell_integration.bash"
