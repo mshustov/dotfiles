@@ -33,4 +33,6 @@ brew cask install vlc
 brew cask install franz
 brew cask install spotify
 
+brew install git-lfs
+
 brew cleanup
