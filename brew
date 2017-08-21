@@ -18,7 +18,7 @@ brew install hub
 
 # brew cask install caskroom/versions/sublime-text3
 # brew cask install webstorm
-brew cask install iterm3
+brew cask install iterm2
 # brew cask install mou
 # brew cask install genymotion
 
