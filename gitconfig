@@ -13,7 +13,7 @@
     local = yellow
     remote = green
 [color "diff"]
-    meta = yellow bold
+    meta = blue bold
     frag = magenta bold
     old = red
     new = cyan
@@ -23,31 +23,35 @@
     untracked = cyan
 [merge]
     ff = no
+    # https://git-scm.com/docs/git-config#git-config-mergeff
 [diff]
     noprefix = true
+    tool = default-difftool
+[difftool "default-difftool"]
+    cmd = code --wait --diff $LOCAL $REMOTE
 [alias]
-    cp = cherry-pick
-    cl = clone
-    ci = commit
     co = checkout
-    br = branch
     dc = diff --cached
     st = status -sb
-    unstage = reset HEAD --
+    undo = reset --soft HEAD^
     last = log -1 HEAD
     lg  = log --oneline --graph --decorate --all
     lgg="log --pretty=oneline -n 20 --graph --abbrev-commit"
     hi = log --oneline --graph --decorate --all --simplify-by-decoration
-
     diff = diff --no-index
 
-    ac="!git add -A && git commit -av"
-    reb="!r() { rebase -i HEAD~$1; }; r"
+    # Remove local branches that are deleted from remote
+    prune = fetch --prune
 
+    # Including new untracked files
+    stash-all = stash save --include-untracked
+
+    # Create local branch for remote PR
     pr = "!f() { git fetch -fu origin refs/pull/$1/head:pr/$1; } ; f"
 
     # Find commits by source code
     fc="!f() { log --pretty=format:'%C(yellow)%h  %Cblue%ad  %Creset%s%Cgreen  [%cn] %Cred%d' --decorate --date=short -S$1; }; f"
+
     # Find commits by commit message
     fm="!f() { log --pretty=format:'%C(yellow)%h  %Cblue%ad  %Creset%s%Cgreen  [%cn] %Cred%d' --decorate --date=short --grep=$1; }; f"
 
@@ -85,3 +89,8 @@
 #[mergetool "sourcetree"]
 #    cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
 #    trustExitCode = true
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
