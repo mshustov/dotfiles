@@ -1,0 +1,14 @@
+{
+    "editor.fontSize": 15,
+    "editor.formatOnPaste": false,
+    "editor.minimap.enabled": false,
+    "files.autoSave": "onFocusChange",
+    "files.insertFinalNewline": true,
+    "editor.renderWhitespace": "all",
+    "extensions.autoUpdate": true,
+    "window.title":"${activeEditorMedium}",
+    "window.zoomLevel": 0,
+    "workbench.colorTheme": "Default Light+",
+    "workbench.iconTheme": "vscode-icons",
+    "vsicons.dontShowNewVersionMessage": true
+}
