@@ -3,8 +3,7 @@
 all: brew-install brew npm subl git env bash ssh webstorm
 
 brew-install:
-	curl -L github.com/mxcl/homebrew/tarball/master | tar xz --strip 1 -C /usr/local
-	brew install phinze/cask/brew-cask
+	/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 
 brew:
 	./brew
