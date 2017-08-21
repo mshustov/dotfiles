@@ -3,14 +3,12 @@ export TERM="xterm-color"
 export CLICOLOR=1
 export LSCOLORS=dxfxcxdxbxegedabagacdx
 
-export EDITOR="subl -w"
+export EDITOR="code --wait"
 
 export DEBFULLNAME="Mikhail Shustov"
 export DEBEMAIL="restrry@gmail.com"
 alias dch='dch --distributor=debian'
-
-export WORKON_HOME=$HOME/.virtualenvs
-source /usr/local/bin/virtualenvwrapper.sh
+alias subl='sublime'
 
 RED="\[\033[0;31m\]"
 YELLOW="\[\033[0;33m\]"
@@ -18,9 +16,7 @@ GREEN="\[\033[0;32m\]"
 GRAY="\[\e[0m\]"
 
 PS1="\$(date +%H:%M) $YELLOW\w$GREEN\$(parse_git_branch)$GRAY \$ "
-if [ -f $(brew --prefix)/etc/bash_completion ]; then
-  . $(brew --prefix)/etc/bash_completion
-fi
+source ~/.git-completion.bash
 
 # standard
 # PS1='\[\e[0;33m\]\w\[\e[0m\]\$ '
@@ -31,6 +27,7 @@ parse_git_branch() {
 
 alias l='ls -lAhG'
 alias la='ls -a'
+alias py='python3'
 
 alias edital='open -a "Sublime Text 2" ~/.bash_profile'
 alias saveal='source ~/.bash_profile
@@ -51,9 +48,14 @@ alias sr="ssh restrry@merzavcev.ru"
 
 alias sizeof="stat -s $1 | awk '{ print $8 }'"
 alias count="ls -f . | wc -l"
-alias gdiff="git diff --color | diff-so-fancy"
-alias localip="ifconfig | sed -En 's/127.0.0.1//;s/.*inet (addr:)?(([0-9]*\.){3}[0-9]*).*/\2/p'"
 
+alias docker-rm="docker rm $(docker ps -a -q)"
+alias docker-rmi="docker rmi $(docker ps -a -q)"
+
+
+function docker-stop() {
+	docker kill $(docker ps -q)
+}
 
 function mkcd() {
 	mkdir -p "$*";cd "$*";
@@ -100,10 +102,6 @@ function ems() {
 
 	#enb make sets $level.sets/$target/$target.examples/
 	enb make examples desktop.examples/$1/$2
-}
-
-function prlocal() {
-	git fetch origin pull/$1/head:$2
 }
 
 function git-copy-branch-name {
@@ -178,17 +176,8 @@ function grab {
  	git clone $rep $dir; cd $dir; npm i && npm run deps;
 }
 
-function docker-stop {
-	docker stop $(docker ps -a -q)
-}
-
-function docker-rm {
-	docker rm $(docker ps -a -q)
-}
-
-
 function cidate {
-    # указанный или последний коммит
+    # passed or the last commit
     STATE=$1 || HEAD;
     git show $STATE | grep Date | awk -F':   ' '{print $2}'
 }
@@ -199,20 +188,12 @@ function gitpatch {
 
 function mkdircd () { mkdir -p "$@" && eval cd "\"\$$#\""; }
 
-# tanker-kit completion. Use in conjunction with tanker-cli or global tanker-kit
-_tanker_completion() {
-    TANKERCOMP="$(tanker comp -c "${COMP_LINE}" -p "${COMP_CWORD}" 2> /dev/null)"
-    COMPREPLY=($(compgen -W "${TANKERCOMP}" -- "${COMP_WORDS[COMP_CWORD]}"))
-}
-complete -o default -F _tanker_completion tanker
-
-#. `brew --prefix`/Cellar/z/1.8/etc/profile.d/z.sh
-# ------------------------------------------------------------------------------
-
 # The next line updates PATH for the Google Cloud SDK.
-source '/Users/mikhailshustov/google-cloud-sdk/path.bash.inc'
+if [ -f /Users/mikhail.shustov/Downloads/google-cloud-sdk/path.bash.inc ]; then
+  source '/Users/mikhail.shustov/Downloads/google-cloud-sdk/path.bash.inc'
+fi
 
 # The next line enables shell command completion for gcloud.
-source '/Users/mikhailshustov/google-cloud-sdk/completion.bash.inc'
-
-test -e "${HOME}/.iterm2_shell_integration.bash" && source "${HOME}/.iterm2_shell_integration.bash"
+if [ -f /Users/mikhail.shustov/Downloads/google-cloud-sdk/completion.bash.inc ]; then
+  source '/Users/mikhail.shustov/Downloads/google-cloud-sdk/completion.bash.inc'
+fi
