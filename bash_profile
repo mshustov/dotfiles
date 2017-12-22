@@ -188,6 +188,10 @@ function gitpatch {
 
 function mkdircd () { mkdir -p "$@" && eval cd "\"\$$#\""; }
 
+if [ $ITERM_SESSION_ID ]; then
+  export PROMPT_COMMAND='echo -ne "\033];${PWD##*/}\007"; ':"$PROMPT_COMMAND";
+fi
+
 # The next line updates PATH for the Google Cloud SDK.
 if [ -f /Users/mikhail.shustov/Downloads/google-cloud-sdk/path.bash.inc ]; then
   source '/Users/mikhail.shustov/Downloads/google-cloud-sdk/path.bash.inc'
