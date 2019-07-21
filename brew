@@ -16,6 +16,7 @@ brew install ondir
 brew install hub
 brew install ccat
 brew install ngrok
+brew install diff-so-fancy
 
 # brew cask install caskroom/versions/sublime-text3
 # brew cask install webstorm
