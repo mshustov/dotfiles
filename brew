@@ -10,33 +10,36 @@ echo "/usr/local/bin/bash" | sudo tee -a /etc/shells
 chsh -s /usr/local/bin/bash
 
 brew install git
-brew tap caskroom/cask
-brew install node
+brew tap homebrew/cask
+# brew install node
 brew install ondir
 brew install hub
 brew install ccat
 brew install ngrok
-brew install diff-so-fancy
+brew install yarn
+# brew install diff-so-fancy
+brew install slack
 
 # brew cask install caskroom/versions/sublime-text3
 # brew cask install webstorm
-brew cask install iterm2
-brew cask install visual-studio-code
+brew install iterm2 --cask
+brew install visual-studio-code --cask
+brew install telegram --cask
 # brew cask install mou
 # brew cask install genymotion
 
-brew cask install google-chrome
-brew cask install firefox
-brew cask install opera
+brew install google-chrome --cask
+brew install firefox --cask
+brew install opera --cask
 
-brew cask install insomnia
-brew cask install skype
-brew cask install keka
-brew cask install imageoptim
-brew cask install vlc
-brew cask install franz
-brew cask install spotify
+# brew cask install insomnia --cask
+# brew cask install skype --cask
+brew install keka --cask
+# brew cask install imageoptim
+brew install vlc --cask
+# brew cask install franz
+# brew cask install spotify
 
-brew install git-lfs
+# brew install git-lfs
 
 brew cleanup
