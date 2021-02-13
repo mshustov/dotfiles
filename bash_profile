@@ -1,4 +1,7 @@
 export TERM="xterm-color"
+# kibana specific settings
+export BUILD_TS_REFS_CACHE_ENABLE="true"
+export KBN_OPTIMIZER_THEMES="v7light"
 
 export CLICOLOR=1
 export LSCOLORS=dxfxcxdxbxegedabagacdx
