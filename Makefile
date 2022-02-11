@@ -1,16 +1,16 @@
-.PHONY: brew npm subl git env bash ssh webstorm
+.PHONY: brew-install brew zsh-install git env bash ssh
 
-all: brew-install brew npm subl git env bash ssh webstorm
+all: brew-install brew zsh-install git env bash ssh
 
 brew-install:
 	/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 
+zsh-install:
+	sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+	cp zshrc ~/.zshrc
+
 brew:
 	./brew
-
-subl:
-	cp Preferences.sublime-settings ~/Library/Application\ Support/Sublime\ Text\ 3/Packages/User/
-	git clone https://github.com/fman7/frontend-light/ ~/Library/Application\ Support/Sublime\ Text\ 3/Packages/User/frontend-light
 
 git:
 	cp git-completion.bash ~/.git-completion.bash
@@ -18,14 +18,10 @@ git:
 	cp gitignore ~/.gitignore
 
 env:
-	cp ondirrc ~/.ondirrc
 	mkdir ~/.nvm
 
-bash:
+shell:
 	cp bash_profile ~/.bash_profile
-
-bash-osx:
-	cp bash_osx ~/.bash_osx
 
 ssh:
 	[ -d ~/.ssh ] || mkdir ~/.ssh
@@ -35,5 +31,3 @@ ssh:
 	pbcopy < ~/.ssh/id_rsa.pub
 	echo -e "\033[0;32mPaste key from your clipboard to https://github.com/settings/ssh"
 
-webstorm:
-	cp settings.jar ~/settings.jar

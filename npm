@@ -1,6 +1,0 @@
-#!/bin/bash
-
-sudo -v # ask for password only at the beginning
-
-npm install -g n
-npm install -g tldr

@@ -12,9 +12,9 @@ brew upgrade
 brew install git
 brew tap homebrew/cask
 # brew install node
-brew install ondir
-brew install hub
-brew install ccat
+# brew install ondir
+# brew install hub
+# brew install ccat
 brew install ngrok
 brew install yarn
 # brew install diff-so-fancy
@@ -30,7 +30,7 @@ brew install telegram --cask
 
 brew install google-chrome --cask
 brew install firefox --cask
-brew install opera --cask
+# brew install opera --cask
 
 # brew cask install insomnia --cask
 # brew cask install skype --cask
@@ -39,6 +39,7 @@ brew install keka --cask
 brew install vlc --cask
 # brew cask install franz
 # brew cask install spotify
+brew install --cask zoom
 
 # brew install git-lfs
 
