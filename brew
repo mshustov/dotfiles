@@ -5,41 +5,27 @@ sudo -v # ask for password only at the beginning
 brew update
 brew upgrade
 
-# brew install bash
-# echo "/usr/local/bin/bash" | sudo tee -a /etc/shells
-# chsh -s /usr/local/bin/bash
-
 brew install git
 brew tap homebrew/cask
-# brew install node
-# brew install ondir
 # brew install hub
 # brew install ccat
 brew install ngrok
 brew install yarn
-# brew install diff-so-fancy
 brew install slack
 brew install diff-so-fancy
 
-# brew cask install caskroom/versions/sublime-text3
-# brew cask install webstorm
 brew install iterm2 --cask
 brew install visual-studio-code --cask
 brew install telegram --cask
-# brew cask install mou
-# brew cask install genymotion
 
 brew install google-chrome --cask
 brew install firefox --cask
-# brew install opera --cask
 
 # brew cask install insomnia --cask
-# brew cask install skype --cask
 brew install keka --cask
 # brew cask install imageoptim
 brew install vlc --cask
-# brew cask install franz
-# brew cask install spotify
+brew install spotify --cask
 brew install --cask zoom
 
 # brew install git-lfs
