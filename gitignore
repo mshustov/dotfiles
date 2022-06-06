@@ -45,9 +45,6 @@ local.properties
 .classpath
 .loadpath
 
-# CDT-specific
-.cproject
-
 # https://github.com/github/gitignore/blob/master/Java.gitignore
 *.class
 
@@ -60,24 +57,3 @@ target/
 
 *.sassc
 .sass-cache
-
-# yandex
-/.bundle
-/vendor/bundle
-/log/*
-/tmp/*
-/public/system/*
-/coverage/
-/spec/tmp/*
-**.orig
-
-.enb/
-desktop.examples/
-touch-phone.examples/
-touch-pad.examples/
-tmpl-coverage/
-
-sgg.sh
-.yaspellerrc
-.yaspellerrc
-.yaspeller.dictionary.json

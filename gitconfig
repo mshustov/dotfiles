@@ -67,36 +67,6 @@
 [url "git@github.yandex-team.ru:lego/islands-components.git"]
     insteadOf = "gcomp:"
 
-[url "git@github.yandex-team.ru:lego/islands-user.git"]
-    insteadOf = "guser:"
-
-[url "git@github.yandex-team.ru:lego/islands-page.git"]
-    insteadOf = "gpage:"
-
-[url "git@github.yandex-team.ru:lego/islands-icons.git"]
-    insteadOf = "gicon:"
-
-[url "git@github.yandex-team.ru:lego/islands-services.git"]
-    insteadOf = "gserv:"
-
-[url "git@github.yandex-team.ru:lego/islands-search.git"]
-    insteadOf = "gserc:"
-
-[url "git@github.yandex-team.ru:lego/islands-codestyle.git"]
-    insteadOf = "gcode:"
-
-[url "git@github.yandex-team.ru:lego/islands.git"]
-    insteadOf = "gisl:"
-
-[url "git@github.yandex-team.ru:lego/islands-romochka.git"]
-    insteadOf = "grom:"
-
-#[difftool "sourcetree"]
-#    cmd = opendiff \"$LOCAL\" \"$REMOTE\"
-#    path =
-#[mergetool "sourcetree"]
-#    cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
-#    trustExitCode = true
 [filter "lfs"]
 	clean = git-lfs clean -- %f
 	smudge = git-lfs smudge -- %f
