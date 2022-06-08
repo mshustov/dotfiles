@@ -9,6 +9,7 @@ brew install git
 brew tap homebrew/cask
 # brew install hub
 # brew install ccat
+brew install nvm
 brew install ngrok
 brew install yarn
 brew install slack

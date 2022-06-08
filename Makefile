@@ -1,6 +1,6 @@
-.PHONY: brew-install brew zsh-install git env ssh
+.PHONY: env brew-install brew zsh-install git ssh
 
-all: brew-install brew zsh-install git env ssh
+all: env brew-install brew zsh-install git ssh
 
 brew-install:
 	/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
