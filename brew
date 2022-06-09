@@ -30,7 +30,7 @@ brew install keka --cask
 brew install vlc --cask
 brew install spotify --cask
 brew install zoom --cask
-
+brew install tomatobar --cask
 # brew install git-lfs
 
 brew cleanup
