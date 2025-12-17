@@ -104,3 +104,48 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 # export VAULT_ADDR=https://secrets.elastic.co:8200
+
+alias tailscale="/Applications/Tailscale.app/Contents/MacOS/Tailscale"
+
+# go
+export PATH=$(go env GOPATH)/bin:$PATH
+
+# java 11
+export PATH="/opt/homebrew/opt/openjdk@11/bin:$PATH"
+export PATH="/opt/homebrew/opt/mysql-client/bin:$PATH"
+export PATH="/Users/mshustov/bin:$PATH"
+# export PATH="/opt/homebrew/opt/mysql@5.7/bin:$PATH"
+export CPPFLAGS="-I/opt/homebrew/opt/openjdk@11/include"
+
+function kubectx_prompt_info() {
+  (( $+commands[kubectl] )) || return
+
+  local current_ctx=$(kubectl config current-context 2> /dev/null)
+  [[ -n "$current_ctx" ]] || return
+
+  # Define colors
+  local red="%F{red}"
+  local green="%F{green}"
+  local orange="%F{yellow}"
+
+  if [[ "$current_ctx" =~ ^(prod)-([a-z]+)-([a-z0-9-]+)-([a-z]+)$ ]]; then
+    echo "${red}🚨 ${match[4]} ${match[2]} @ ${match[3]}%f"
+  elif [[ "$current_ctx" =~ ^([a-z]+)-non-prod-([a-z]+)$ ]]; then
+    echo "${green}✌🏻 ${match[2]} ${match[1]}%f"
+  elif [[ "$current_ctx" =~ ^non-prod-([a-z]+)-([a-z0-9-]+)-([a-z]+)$ ]]; then
+    echo "${orange}🙏 ${match[3]} ${match[1]} @ ${match[2]}%f"
+  else
+    # default behavior in case none of the patterns match
+    echo "⚒️  ${kubectx_mapping[$current_ctx]:-${current_ctx:gs/%/%%}}"
+  fi
+}
+
+RPS1='$(kubectx_prompt_info)'
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/mshustov/Downloads/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/mshustov/Downloads/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/Users/mshustov/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/mshustov/Downloads/google-cloud-sdk/completion.zsh.inc'; fi
+
+. "$HOME/.local/bin/env"

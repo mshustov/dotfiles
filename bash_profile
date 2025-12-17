@@ -45,10 +45,6 @@ killall Finder'
 alias hideall='defaults write com.apple.finder AppleShowAllFiles FALSE
 killall Finder'
 
-alias hub="git"
-
-alias sr="ssh restrry@merzavcev.ru"
-
 alias sizeof="stat -s $1 | awk '{ print $8 }'"
 alias count="ls -f . | wc -l"
 
